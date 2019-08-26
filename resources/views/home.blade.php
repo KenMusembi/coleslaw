@@ -13,12 +13,11 @@
                         </div>
                     @endif
 <h1>Questions this week</h1>
-@foreach ($questions as $question)
-@foreach ($answers as $answer)
- {{ $question->user_id}}
- {{ $question->question}}
-  {{ $answer->answer}}<br>
-@endforeach
+@foreach ($qna as $qa)
+
+ {{ $qna}}
+<br>
+
 @endforeach
 
 <input type="button" value="Edit">

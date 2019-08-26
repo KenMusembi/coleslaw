@@ -14,8 +14,11 @@ class QuestionController extends Controller
     public function index(){
       $questions = Question::all();
       $answers = Answer::all();
-      return view('home', compact('questions'), compact('answers'));
       //return view('home');
+      $qna = Answer::join('questions','questions.id','=','answers.question_id')->
+      select('questions.id', 'answers.answer','questions.question');
+      return view('home', compact('qna'))->with("qna",$qna);
+
     }
 
     public function create(){
