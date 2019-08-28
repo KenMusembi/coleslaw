@@ -15,8 +15,12 @@
 <h1>Questions this week</h1>
 @foreach ($qna as $qa)
 
- {{ $qna}}
-<br>
+{{ $qa->id}}
+ {{ $qa->question}}
+ <br>
+ {{ $qa->answer}}<br>
+ <a href="" >answer</a> &nbsp <a href=""> comment</a> &nbsp   <a href="" >follow</a> &nbsp   <a href="" >share</a>
+<br><br>
 
 @endforeach
 
