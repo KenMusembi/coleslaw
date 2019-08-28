@@ -19,13 +19,44 @@
  {{ $qa->question}}
  <br>
  {{ $qa->answer}}<br>
- <a href="" >answer</a> &nbsp <a href=""> comment</a> &nbsp   <a href="" >follow</a> &nbsp   <a href="" >share</a>
+ <p>
+<a  data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Answer</a>&nbsp
+<a  data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample  ">Follow</a>
+</p>
+<div class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#">Separated link</a>
+  </div>
+</div>
+  
+<div class="collapse" id="collapseExample" style="width: 36rem;">
+  <div class="card card-body">
+    <h5 class="card-title">{{ Auth::user()->name}}, {{ Auth::user()->email}}</h5>
+    <div class="container">
+        <form method="POST" action="action">
+            {{ csrf_field() }}
+          <div>
+          <textarea name="answer" rows="8 " cols="70" placeholder="write answer here"></textarea>
+          <input type="text" name="question_id" value="{{$qa->id}}" hidden="true" placeholder="Type question here">
+          </div>
+          <div>
+                <input class="btn btn-success" type="submit" value="Submit">
+          </div>
+        </form>
+     </div>
+
+  </div>
+</div>
 <br><br>
 
 @endforeach
-
-<input type="button" value="Edit">
 <br>
+
                 </div>
             </div>
         </div>
