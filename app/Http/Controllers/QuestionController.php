@@ -16,13 +16,34 @@ class QuestionController extends Controller
       $answers = Answer::all();
       //return view('home');
       $qna = Question::leftjoin('answers','questions.id','=','answers.question_id')->
-      select('questions.id', 'answers.answer','questions.question')->get();
+      select('questions.id', 'answers.answer','questions.question')->groupby('questions.id')->orderby('questions.id')->get();
       return view('home', compact('qna'));
     }
 
     public function create(){
         return view('create');
     }
+
+    public function answer(){
+      $qna = Question::leftjoin('answers','questions.id','=','answers.question_id')->
+      get();
+      return view('answer', compact('qna'));
+    }
+
+    public function welcome(){
+      $qna = Question::leftjoin('answers','questions.id','=','answers.question_id')->
+      select('questions.id', 'answers.answer','questions.question')->groupby('questions.id')->orderby('questions.id')->get();
+      return view('welcome', compact('qna'));
+    }
+
+    public function spaces(){
+        return view('spaces');
+    }
+
+    public function notifications(){
+        return view('notifications');
+    }
+
 
     public function storeQuestion(){
 

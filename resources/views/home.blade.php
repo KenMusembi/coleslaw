@@ -2,20 +2,27 @@
 
 @section('content')
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-12">
-      <div class="card">
-        <div class="card-header">Questions</div>
-        <div class="card-body">
+    <div class="row justify-content-center">
+<div class="col-md-2" align="left">
+  <div class="card" style="background-color:false;">
+    <div class="card-body">
+      Feed
+    </div>
+  </div>
+</div>
+
+
+    <div class="col-md-7">
+
           @if (session('status'))
           <div class="alert alert-success" role="alert">
             {{ session('status') }}
           </div>
           @endif
-          <h1>Questions this week</h1>
+
 
           @foreach ($qna as $qa)
-          <div class="card"  style="width:48rem;">
+          <div class="card"  style="width:36rem;">
             {{ $qa->id}}
             {{ $qa->question}}
             <br>
@@ -57,14 +64,48 @@
 
                   </div>
                 </div>
-                <br><br>
+
               </div>
               @endforeach
               <br>
 
             </div>
-          </div>
-        </div>
+
       </div>
     </div>
+
+    <!-- Large modal -->
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="myclubs_ModalLabel">Add Question</h5>
+      <button type="button" class="close" id="myclubs_Modalclose" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+      <form method="POST" action="qaction">
+
+          {{ csrf_field() }}
+
+
+               <div class="form-group">
+                 <textarea class="form-control" id="question" name="question" placeholder="type question here"></textarea>
+               </div>
+               <div class="form-group">
+                 <label for="level" name="level" placeholder="Beginner" class="col-form-label">Level:</label>
+                 <input type="dropdown" class="form-control" id="message-text">
+               </div>
+             </form>
+
+    <div class="modal-footer">
+      <button type="button" id="myclubs_Modalclose" class="btn btn-primary close_view" data-dismiss="modal">Close</button>
+      <input class="btn btn-danger" type="submit" value="Add Question">
+    </div>
+        </div>
+  </div>
+</div>
+
+
     @endsection
