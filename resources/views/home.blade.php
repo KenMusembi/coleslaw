@@ -24,7 +24,7 @@
 
             <ul class="nav nav-tabs">
               <li class="nav-item">
-                <i class="fas fa-edit">example</i>
+                <i class="fas fa-edit"></i>
                 <a  class="nav-link fas fa-edit" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Answer</a>&nbsp
                 <li class="nav-item"><a  class="nav-link" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample  ">Follow</a>
                   <li class="nav-item dropdown" align="right">
