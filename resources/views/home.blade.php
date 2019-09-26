@@ -32,7 +32,7 @@
             <ul class="nav nav-tabs">
               <li class="nav-item">
                 <i class="fas fa-edit"></i>
-                <a  class="nav-link fas fa-edit" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Answer</a>&nbsp
+                <a  class="nav-link fas fa-edit" data-toggle="collapse" href="#collapseExample-{{ $qa['id']}}" role="button" aria-expanded="false" aria-controls="collapseExample">Answer</a>&nbsp
                 <li class="nav-item"><a  class="nav-link" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample  ">Follow</a>
                   <li class="nav-item dropdown" align="right">
                     <a class="nav-link dropdown-toggle"  data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">...</a>
@@ -46,7 +46,8 @@
                   </li>
                 </ul>
 
-                <div class="collapse" id="collapseExample" style="width: 36rem;">
+                @if( $qa->id ==  true )
+                         <div class="collapse" id="collapseExample-{{ $qa['id']}}" style="width: 36rem;">
                   <div class="card card-body">
                     <h5 class="card-title">{{ Auth::user()->name}}, {{ Auth::user()->email}}</h5>
                     <div class="container">
@@ -66,6 +67,7 @@
                 </div>
 
               </div>
+              @endif
               @endforeach
               <br>
 
