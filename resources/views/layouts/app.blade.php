@@ -6,8 +6,9 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <title>{{ config('app.name', 'Coleslaw') }}</title>
+    <title style="color:#DC2800">{{ config('app.name', 'Coleslaw') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -34,16 +35,16 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                       <li class="nav-item">
-                          <a class="nav-link" href="{{ route('login') }}">{{ __('Home') }}</a>
+                          <a class="nav-link" href="{{ route('login') }}">  <i class="fa fa-home" style="font-size:24px;color:#DC2800;"></i> {{ __('Home') }}</a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link" href="{{ route('answer') }}">{{ __('Answer') }}</a>
+                          <a class="nav-link" href="{{ route('answer') }}"><i class="fa fa-edit" style="font-size:24px"></i> {{ __('Answer') }}</a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link" href="{{ route('spaces') }}">{{ __('Spaces') }}</a>
+                          <a class="nav-link" href="{{ route('spaces') }}"><i class="fa fa-group" style="font-size:24px"></i> {{ __('Spaces') }}</a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link" href="{{ route('notifications') }}">{{ __('Notifications') }}</a>
+                          <a class="nav-link" href="{{ route('notifications') }}"><i class="fa fa-envelope" style="font-size:24px"></i> {{ __('Notifications') }}</a>
                       </li>
                     </ul>
 

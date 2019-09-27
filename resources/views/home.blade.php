@@ -6,7 +6,7 @@
 <div class="col-md-2" align="left">
   <div class="card" style="background-color:false;">
     <div class="card-body">
-      Feed
+      <i class="fa fa-newspaper-o" style="font-size:18px;color:#DC2800;"></i>   Feed
     </div>
   </div>
 </div>
@@ -22,8 +22,8 @@
 
 
           @foreach ($qna as $qa)
-          <div class="card"  style="width:36rem;">
-            {{ $qa->id}}
+          <div class="card"  style="width:36rem; padding:8px;">
+
             {{ $qa->question}}
             <br>
             {{ $qa->answer}}<br>
@@ -31,9 +31,10 @@
 
             <ul class="nav nav-tabs">
               <li class="nav-item">
-                <i class="fas fa-edit"></i>
-                <a  class="nav-link fas fa-edit" data-toggle="collapse" href="#collapseExample-{{ $qa['id']}}" role="button" aria-expanded="false" aria-controls="collapseExample">Answer</a>&nbsp
-                <li class="nav-item"><a  class="nav-link" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample  ">Follow</a>
+
+                <a  class="nav-link fa fa-edit" data-toggle="collapse" href="#collapseExample-{{ $qa['id']}}" role="button" aria-expanded="false" aria-controls="collapseExample">Answer</a>&nbsp
+                <li class="nav-item">
+                  <a  class="nav-link fa fa-blind" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample  ">Follow</a>
                   <li class="nav-item dropdown" align="right">
                     <a class="nav-link dropdown-toggle"  data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">...</a>
                     <div class="dropdown-menu">
@@ -58,7 +59,7 @@
                           <input type="text" name="question_id" value="{{$qa->id}}" hidden="true" placeholder="Type question here">
                         </div>
                         <div>
-                          <input class="btn btn-success" type="submit" value="Submit">
+                          <input class="btn btn-danger" type="submit" value="Submit Answer">
                         </div>
                       </form>
                     </div>
