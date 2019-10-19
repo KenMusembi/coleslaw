@@ -22,7 +22,7 @@
 
 
           @foreach ($qna as $qa)
-          <div class="card"  style="width:36rem; padding:8px;">
+          <div class="card"  style="width:36rem; padding:24px;">
 
             {{ $qa->question}}
             <br>
@@ -55,7 +55,11 @@
                       <form method="POST" action="action">
                         {{ csrf_field() }}
                         <div>
-                          <textarea name="answer" rows="8 " cols="70" placeholder="write answer here"></textarea>
+                          <textarea class="form-control" id="answer" name="answer" rows="8 " cols="70" placeholder="write answer here"></textarea>
+                          <script src="{{ asset('vendor/unisharp/laravel-ckeditor/ckeditor.js') }}"></script>
+                          <script>
+                              CKEDITOR.replace( 'answer' );
+                          </script>
                           <input type="text" name="question_id" value="{{$qa->id}}" hidden="true" placeholder="Type question here">
                         </div>
                         <div>

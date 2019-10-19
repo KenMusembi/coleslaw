@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Question;
 use App\Answer;
 use App\User;
+use App\Spaces;
 use Auth;
 
 class QuestionController extends Controller
@@ -37,7 +38,10 @@ class QuestionController extends Controller
     }
 
     public function spaces(){
-        return view('spaces');
+      $qna = Question::leftjoin('answers','questions.id','=','answers.question_id')->
+      select('questions.id', 'answers.answer','questions.question')->groupby('questions.id')->orderby('questions.id')->get();
+      $space = Spaces::all();
+      return view('spaces', compact('space','qna'));
     }
 
     public function notifications(){

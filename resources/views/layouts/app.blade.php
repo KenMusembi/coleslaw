@@ -44,7 +44,6 @@
                           <a class="nav-link" href="{{ route('spaces') }}"><i class="fa fa-group" style="font-size:24px"></i> {{ __('Spaces') }}</a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link" href="{{ route('notifications') }}"><i class="fa fa-envelope" style="font-size:24px"></i> {{ __('Notifications') }}</a>
                       </li>
                     </ul>
 
