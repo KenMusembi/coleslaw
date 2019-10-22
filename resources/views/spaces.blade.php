@@ -3,12 +3,18 @@
 @section('content')
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-md-2.5" align="left">
+    <div class="col-md-2.8" align="left">
       <div class="card" style="background-color:false;">
         <div class="card-body">
-          <i class="fa fa-newspaper-o" style="font-size:18px;color:#DC2800;"></i>  Spaces <br>
+          <i class="" style="font-size:18px;color:#DC2800;"></i>  Spaces <br>
           @foreach ($space as $qa)
-          <a class="btn" href="#trial" style="font-size:16px;color:#DC2800;"> {{$qa->name}}</a><br>
+          @if ($qa->name == "Family")
+          <a class="fa fa-users" href="#trial" style="font-size:16px;color:#DC2800;"> Family</a><br>
+          @elseif ($qa->name == "Religion")
+          <a class="fa fa-book    " href="#trial" style="font-size:16px;color:#DC2800;">    Religion</a><br>
+          @elseif ($qa->name == "Computer Science")
+          <a class="fa fa-laptop   " href="#trial" style="font-size:16px;color:#DC2800;">    Computer Science</a><br>
+          @endif
           @endforeach
         </div>
       </div>
